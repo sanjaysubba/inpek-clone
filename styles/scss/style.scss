@@ -1,0 +1,58 @@
+@import 'custom';
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+*{
+    margin: 0;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-size: 1.6rem;
+}
+.hero-section{
+    background-image: url('../../images/hero-bg.webp');
+    height: 150vh;
+    width: 100%;
+}
+.hero-text{
+    font-size: 4rem;
+    line-height: 2;
+    span{
+        color: yellow;
+    }
+}
+.text-content{
+    &__title{     
+        line-height: 1.8;
+        font-size: 3rem;
+    }
+    p{
+        line-height: 1.8;
+        font-size: 3rem;
+    }
+}
+.slider{
+    &__title{
+        font-size: 7rem;
+        span{
+            color: yellow;
+        }
+    }
+}
+.image-section{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../images/image.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text-scroll{
+    p{
+        font-weight: 900;
+        font-size: 8rem;
+    }
+}
