@@ -20,3 +20,40 @@ $spacers: (
   15: $spacer * 15,
   20: $spacer * 20,
 );
+
+@import '../bootstrap/scss/functions';
+@import '../bootstrap/scss/variables';
+@import '../bootstrap/scss/utilities';
+
+//Adding custom utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-weight": (
+      property: font-weight,
+      class: fw,
+      responsive: true,
+      values: (
+        ex-b : 900,
+      ),
+    ),
+    "font-size": (
+      property: font-size,
+      class: f-s,
+      responsive: true,
+      values: (
+        1 : 1rem * 1,
+        2 : 1rem * 2,
+        3 : 1rem * 3,
+        4 : 1rem * 4,
+        5 : 1rem * 5,
+        6 : 1rem * 6,
+        7 : 1rem * 7,
+        8 : 1rem * 8,
+        9 : 1rem * 9,
+        10 : 1rem * 10,
+      ),
+    ),
+
+  )
+);

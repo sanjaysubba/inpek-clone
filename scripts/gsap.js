@@ -26,7 +26,7 @@ textContent.to(".text-content__title",{
 })
 
 gsap.set(".slider__title",{
-    y: 20,
+    y: 100,
     opacity: 0,
 })
 const sliderAnim = gsap.timeline({
@@ -47,6 +47,56 @@ gsap.to('.text-scroll p',{
         trigger:'.text-scroll',
         start: 'top 80%',
         end: 'bottom top',
-        scrub: true,
+        scrub: 3,
     }
 })
+
+gsap.set('.product-features__title',{
+    y: 100,
+    opacity:0,
+})
+
+gsap.to('.product-features__title',{
+    y: 0,
+    opacity:1,
+    duration:2,
+    scrollTrigger:{
+        trigger:'.product-features__title',
+        start: 'top 80%',
+    }
+})
+
+gsap.set('.image-section',{
+    y: 100,
+    opacity: 0,
+})
+
+gsap.to('.image-section',{
+    y: 0,
+    opacity:1,
+    duration:2,
+    scrollTrigger:{
+        trigger:'.image-section',
+        start: 'top 80%',
+    }
+})
+
+const featuredIcon = document.querySelectorAll('.product-features__wrapper');
+if(featuredIcon){
+    featuredIcon.forEach((icon)=>{
+        gsap.set(icon,{
+            y:100,
+            opacity:0,
+        })
+        
+        gsap.to(icon,{
+            y: 0,
+            opacity:1,
+            duration:2,
+            scrollTrigger:{
+                trigger: icon,
+                start: 'top 90%',
+            }
+        })
+    })
+}
