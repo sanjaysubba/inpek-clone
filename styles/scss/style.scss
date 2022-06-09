@@ -4,20 +4,53 @@
 *{
     margin: 0;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ffc107 #766f6f;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffc10773;
+    border-radius: 5px;
+    border: 0px none #ffffff;
+  }
+
+
+
 html{
     font-size: 10px;
 }
 body{
+    overflow: overlay;
     font-size: 1.6rem;
+}
+.nav-scrolled{
+    background-color: white!important;
+    a{
+        color: black!important;
+    }
 }
 .hero-section{
     background-image: url('../../images/hero-bg.webp');
     height: 150vh;
     width: 100%;
+    margin-top: -10rem;
 }
 .hero-text{
-    font-size: 4rem;
+    font-size: 9rem;
     line-height: 2;
+    font-weight: 900;
 }
 .text-content{
     &__title{     
