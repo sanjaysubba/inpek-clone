@@ -1,117 +1,150 @@
 // import {gsap} from 'gsap';
 gsap.registerPlugin(ScrollTrigger);
 function myAnimations(){
-const heroText = gsap.timeline();
-heroText.set(".hero-text",{
-    opacity:0,
-}).to(".hero-text",{   
-    y: -150,
-    duration:1,
-    opacity: 1,
-    delay:1, 
-});
-gsap.set(".text-content__title",{
-    y: 50,
-    opacity: 0,
-});
-gsap.set(".text-content__text",{
-    y: 50,
-    opacity: 0,
-});
-const textContent = gsap.timeline({
-    scrollTrigger:{
-        trigger: ".text-content__title",
-    },
-});
-textContent.to(".text-content__title",{
-    y: 0,
-    duration:1,
-    opacity: 1, 
-})
-.to(".text-content__text",{
-    y: 0,
-    duration:1,   
-    opacity: 1, 
-})
+    const heroText = gsap.timeline();
+    heroText.set(".hero-text",{
+        opacity:0,
+    }).to(".hero-text",{   
+        y: -150,
+        duration:1,
+        opacity: 1,
+        delay:1, 
+    });
+    gsap.set(".text-content__title",{
+        y: 50,
+        opacity: 0,
+    });
+    gsap.set(".text-content__text",{
+        y: 50,
+        opacity: 0,
+    });
+    const textContent = gsap.timeline({
+        scrollTrigger:{
+            trigger: ".text-content__title",
+        },
+    });
+    textContent.to(".text-content__title",{
+        y: 0,
+        duration:1,
+        opacity: 1, 
+    })
+    .to(".text-content__text",{
+        y: 0,
+        duration:1,   
+        opacity: 1, 
+    })
 
-gsap.set(".slider__title",{
-    y: 100,
-    opacity: 0,
-})
-const sliderAnim = gsap.timeline({
-    scrollTrigger:{
-        trigger: '.slider',
-        start: 'top 60%',
-    }
-})
-sliderAnim.to('.slider__title',{
-    y: 0,
-    opacity: 1,
-    duration: 2,
-})
+    gsap.set(".slider__title, .swiper-01",{
+        y: 100,
+        opacity: 0,
+    })
+    const sliderAnim = gsap.timeline({
+        scrollTrigger:{
+            trigger: '.slider',
+            start: 'top 60%',
+        }
+    })
+    sliderAnim.to('.slider__title',{
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+    })
+    sliderAnim.to('.swiper-01',{
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.5,
+    })
 
-gsap.to('.text-scroll p',{
-    x:-500,
-    scrollTrigger:{
-        trigger:'.text-scroll',
-        start: 'top 80%',
-        end: 'bottom top',
-        scrub: 3,
-    }
-})
+    // gsap.to('.swiper-01 .swiper-button-prev')
+    gsap.to('.text-scroll p',{
+        x:-500,
+        scrollTrigger:{
+            trigger:'.text-scroll',
+            start: 'top 80%',
+            end: 'bottom top',
+            scrub: 3,
+        }
+    })
 
-gsap.set('.product-features__title',{
-    y: 100,
-    opacity:0,
-})
+    gsap.set('.product-features__title',{
+        y: 100,
+        opacity:0,
+    })
 
-gsap.to('.product-features__title',{
-    y: 0,
-    opacity:1,
-    duration:2,
-    scrollTrigger:{
-        trigger:'.product-features__title',
-        start: 'top 80%',
-    }
-})
+    gsap.to('.product-features__title',{
+        y: 0,
+        opacity:1,
+        duration:2,
+        scrollTrigger:{
+            trigger:'.product-features__title',
+            start: 'top 80%',
+        }
+    })
 
-gsap.set('.image-section',{
-    y: 100,
-    opacity: 0,
-})
+    gsap.set('.image-section',{
+        y: 100,
+        opacity: 0,
+    })
 
-gsap.to('.image-section',{
-    y: 0,
-    opacity:1,
-    duration:2,
-    scrollTrigger:{
-        trigger:'.image-section',
-        start: 'top 80%',
-    }
-})
+    gsap.to('.image-section',{
+        y: 0,
+        opacity:1,
+        duration:2,
+        scrollTrigger:{
+            trigger:'.image-section',
+            start: 'top 80%',
+        }
+    })
 
-const featuredIcon = document.querySelectorAll('.product-features__wrapper');
-if(featuredIcon){
-    featuredIcon.forEach((icon)=>{
-        gsap.set(icon,{
-            y:100,
-            opacity:0,
+    const featuredIcon = document.querySelectorAll('.product-features__wrapper');
+    if(featuredIcon){
+        featuredIcon.forEach((icon)=>{
+            gsap.set(icon,{
+                y:100,
+                opacity:0,
+            })
+            
+            gsap.to(icon,{
+                y: 0,
+                opacity:1,
+                duration:2,
+                stagger: 0.6,
+                scrollTrigger:{
+                    trigger: icon,
+                    start: 'top 90%',
+                
+                }
+            })
         })
-        
-        gsap.to(icon,{
-            y: 0,
-            opacity:1,
-            duration:2,
-            stagger: 0.6,
-            scrollTrigger:{
-                trigger: icon,
-                start: 'top 90%',
-               
-            }
-        })
+    }
+
+    gsap.set('.testimonial',{
+        y:100,
+    })
+    gsap.to('.testimonial',{
+        y: 0,
+        duration: 1,
+        scrollTrigger:{
+            trigger: '.testimonial',
+            start: 'top 80%'
+        }
+    })
+    gsap.set('.testimonial-content p',{
+        y:100,
+        opacity:0
+    })
+    gsap.to('.testimonial-content p',{
+        y: 0,
+        duration: 1,
+        opacity: 1,
+        scrollTrigger:{
+            trigger: '.testimonial',
+            start: 'top 60%'
+        }
     })
 }
-}
+myAnimations();
 // var timeline = gsap.timeline();
 // timeline.to(".transition",{
 //     height:"0%",
@@ -145,7 +178,6 @@ if(featuredIcon){
 //     hero.style.marginTop = -navbarHeight + 'px';
 
 // }
-myAnimations();
 // headerSizeCalc();
 pageTransition = () => {
     var timeline = gsap.timeline();
